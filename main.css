@@ -1,0 +1,321 @@
+html, body {
+  margin: 0px;
+  background-color: #232323;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  text-shadow: 2px 2px 4px #444444;
+  color: white;
+}
+h1
+{
+font-family: Avenir, Helvetica, sans-serif;
+font-size: 72px;
+}
+h2
+{
+font-family: Avenir, Helvetica, sans-serif;
+font-size: 36px
+}
+h3
+{
+font-family: Avenir, Helvetica, sans-serif;
+font-weight: normal;
+font-size: 24px;
+margin-bottom: 10px;
+}
+p
+{
+  font-family: Avenir;
+  font-size: 18px;
+  margin: 10px;
+}
+li
+{
+  font-family: Avenir;
+}
+figcaption
+{
+  font-family: Avenir;
+  text-align: center;
+}
+a{
+  color: inherit;
+  text-decoration: none;
+}
+a:hover{
+  color: #919191 !important;
+}
+a:visited {
+  color: inherit;
+}
+table{
+  margin: auto;
+}
+td{
+  padding: 20px;
+  margin: 20px;
+  border: 4px solid black;
+  border-radius: 5px;
+  background-color: #171717;
+  max-width: 40vw;
+}
+.vehicle{
+  width:100%;
+  height:auto;
+  border: 3px solid black;
+  margin-bottom: 10px;
+}
+.launch{
+  width:100%;
+  height:auto;
+  border: 3px solid black;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.break1{
+  padding-top: 100px;
+}
+.break2{
+  padding-top: 200px;
+}
+.button0{
+  font-family: Avenir;
+  font-size: 20px;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.button0:hover{
+  background-color: #171717;
+  border: 2px solid #171717;
+  color: white;
+  transition: all 0.2s;
+}
+.iconImg{
+  width:500px;
+  height:auto;
+  padding:20px;
+  
+  transition: all 0.2s;
+}
+.iconImg:hover{
+  width:540px;
+  height:auto;
+  padding:10px;
+  transition: all 0.2s;
+}
+.iconImg2{
+  width:300px;
+  height:auto;
+  padding:20px;
+  
+  transition: all 0.2s;
+}
+.iconImg2:hover{
+  width:340px;
+  height:auto;
+  padding:10px;
+  transition: all 0.2s;
+}
+
+#heading{
+  height: 90px;
+  padding-top: 10px;
+  display: flex;
+}
+#logoimg{
+  width:80px;
+  height:auto;
+  padding-left: 5px;
+  padding-top: 20px;
+  margin: auto;
+  transition: all 0.2s;
+}
+#logoimg:hover{
+  width:90px;
+  height:auto;
+  padding-left: 0px;
+  padding-top: 15px;
+  transition: all 0.2s;
+}
+#main{
+  display: flex;
+}
+#main > div {
+  flex: 1; /*grow*/
+}
+#box1{
+  background-image: url("pic/liftoff.png");
+    background-repeat: no-repeat;
+  background-size: cover;
+  clip-path: polygon(0 0, calc(100%) 0, calc(100% - 3vw) 100%, 0 100%);
+  color: white;
+  text-align: center;
+  height: 500px;
+  transition: flex-grow 2s;
+}
+#b1i{
+  padding-top:1px;
+  height: 100px;
+  background-color: black;
+  text-align: center;
+  transition: background 2s;
+}
+#box1:hover{
+  flex-grow: 6;
+  transition: all 2s;
+}
+#box1:hover #b1i{
+  background-color: rgba(0, 0, 0, 0);
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-transition: background 1.5s linear;
+  transition: all 2s;
+}
+}
+#box2{
+  background-image: url("rlx.png");
+    background-repeat: no-repeat;
+  background-size: cover;
+  clip-path: polygon(3vw 0, calc(100%) 0, calc(100% - 3vw) 100%, 0px 100%);
+  color: white;
+  text-align: center;
+  height: 500px;
+  transition: flex-grow 2s;
+}
+#box2:hover{
+  flex-grow: 6;
+  transition: all 2s;
+}
+#b2i{
+  padding-top:1px;
+  background-color: black;
+  height: 100px;
+  text-align: center;
+  transition: background 2s;
+}
+#box2:hover #b2i{
+  background-color: rgba(0, 0, 0, 0);
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-transition: background 1.5s linear;
+  transition: all 2s;
+}
+#box3{
+  background-image: url("pic/RLY.JPG");
+    background-repeat: no-repeat;
+  background-size: cover;
+  clip-path: polygon(3vw 0, 100% 0, 100% 100%, 0px 100%);
+  color: white;
+  text-align: center;
+  height: 500px;
+  transition: flex-grow 2s;
+}
+#box3:hover{
+  flex-grow: 6;
+  transition: all 2s;
+}
+#b3i{
+  padding-top:1px;
+  background-color: black;
+  height: 100px;
+  text-align: center;
+  transition: background 2s;
+}
+#box3:hover #b3i{
+  background-color: rgba(0, 0, 0, 0);
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-transition: background 1.5s linear;
+  transition: all 2s;
+}
+#break1
+		{
+		background-image: url("pic/rlx.JPG");
+    /* Set a specific height */
+    min-height: 300px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+		background-color: white;
+		padding-top: 45px;
+		padding-left: 0px;
+		padding-bottom: 45px;
+		}
+#break2
+		{
+    /* Set a specific height */
+    min-height: 300px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+		background-color: white;
+		padding-top: 65px;
+		padding-left: 0px;
+		padding-bottom: 45px;
+		}
+#break3
+		{
+    /* Set a specific height */
+    min-height: 300px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+		background-color: white;
+		padding-top: 65px;
+		padding-left: 0px;
+		padding-bottom: 45px;
+		}
+#introBanner
+		{
+		background-image: url("pic/RL-Y1.png");
+    /* Set a specific height */
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+		}
+footer{
+  background-color: #171717;
+  font-family: Avenir, Helvetica, sans-serif;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  padding-left: 50px;
+}
+    .b1{
+      background-color: blue;
+      height: 10px;
+      margin-right: 20px;
+    }
+    .b2{
+      background-color: white;
+      height: 10px;
+      margin-right: 20px;
+    }
+    .b3{
+      background-color: red;
+      height: 10px;
+      margin-right: 20px;
+    }
