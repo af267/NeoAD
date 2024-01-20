@@ -1,0 +1,285 @@
+<html>
+	<head>
+		<title>Resources - NeoAD</title>
+		<link rel="shortcut icon" href="logos/logo-new-small.png">
+    <link rel="stylesheet" href="main.css">
+    <meta property="og:title" content="Resources - NeoAD" />
+    <meta property="og:description" content="Taking the skies beyond"/>
+    <meta property="og:image" content="logos/logo-new-white.png">
+		<style>
+		#menu
+		{
+		background-color: white;
+		padding: 20px;
+		position: fixed;
+		width: 100%;
+		}
+		#clock
+		{
+		font-family: Avenir, Helvetica, sans-serif;
+		background-color: black;
+		color: white;
+		padding: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+		text-align: center;
+   		font-size: 70px;
+    animation: fadeIn linear 2s;
+  -webkit-animation: fadeIn linear 2s;
+  -moz-animation: fadeIn linear 2s;
+  -o-animation: fadeIn linear 2s;
+  -ms-animation: fadeIn linear 2s;
+  @keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+		}
+		#footer
+		{
+		font-family: Avenir, Helvetica, sans-serif;
+		background-color: #000033;
+		color: white;
+		padding-top: 50px;
+		padding-bottom: 50px;
+		padding-left: 100px;
+		}
+		#timerContainer {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  width:700px;
+  margin:20px auto;
+  min-height: 60px;
+  border-top:0px;
+}
+.timer, .reset {
+  float:left;
+  width: 54%;
+  padding: 20px 0;
+  font-size: 24px;
+  text-align:center;
+  color: #ffffff;
+  background: gray;
+  cursor: pointer
+}
+.reset {
+  background: #000;
+  color: white;
+  width:14.9%;
+  border-left: 1px solid #fff;
+}
+.reset:hover {
+  background: gray;
+}
+.lighter {
+  background: #FFFFFF
+}
+		</style>
+	</head>
+<body>
+  <div id="heading" style="padding-left:20px">
+    <a href="index.html" style="margin-top:-20px"><img src="logos/logo-new-white.png" alt="NeoAD - Home" id="logoimg" align="right" /></a>
+    <h3 style="margin:25px; padding-left:10px; padding-right:7px; font-size:20px;"><a href="launches.html">LAUNCHES</a></h3>
+    <h3 style="margin:25px; padding-right:7px; font-size:20px;" ><a href="vehicles.html">VEHICLES</a></h3>
+    <h3 style="margin:25px; padding-right:7px; font-size:20px;"><a href="resources.html">RESOURCES</a></h3>
+    <h3 style="margin:25px; padding-right:7px; font-size:20px;"><a href="about.html">ABOUT</a></h3>
+  </div>
+  <div class="break1"></div>
+  <h1>RESOURCES</h1>
+  <div class="break1"></div>
+  <div id = "clock">
+<script>
+function clock() {
+  //Save the times in variables
+
+  var today = new Date();
+
+  var hours = today.getHours();
+  var minutes = today.getMinutes();
+  var seconds = today.getSeconds();
+
+  //Set the AM or PM time
+
+  if (hours >= 12) {
+    meridiem = " PM";
+  } else {
+    meridiem = " AM";
+  }
+
+  //convert hours to 12 hour format and put 0 in front
+  if (hours > 12) {
+    hours = hours - 12;
+  } else if (hours === 0) {
+    hours = 12;
+  }
+
+  //Put 0 in front of single digit minutes and seconds
+
+  if (minutes < 10) {
+    minutes = "0" + minutes;
+  } else {
+    minutes = minutes;
+  }
+
+  if (seconds < 10) {
+    seconds = "0" + seconds;
+  } else {
+    seconds = seconds;
+  }
+
+  document.getElementById("clock").innerHTML =
+    hours + ":" + minutes + ":" + seconds + meridiem;
+}
+
+setInterval("clock()", 1000);
+</script>
+        <break></break>
+  </div>
+  <div id="timerContainer">
+    <div class="break1"></div>
+    <div onclick="startTimer()">
+      <h3 class="timer" style="margin:0px">START STOPWATCH</h3>
+    </div>
+    <div class="startTimer reset" onclick="startTimer()" >
+      <h3 style="margin: 0px;">PLAY</h3>
+       <i class="fas fa-play"></i>
+      </div>
+    <div class="pauseTimer reset" onclick="pauseTimer()" >
+      <h3 style="margin: 0px;">PAUSE</h3>
+      <i class="fas fa-pause"></i>
+      </div>
+    <div class="resetTimer reset" onclick="resetTimer()">
+      <h3 style="margin: 0px;">RESET</h3>
+    </div>
+    <div class="break1"></div>
+  </div>
+  <script type="text/javascript">
+var startTimerButton = document.querySelector('.startTimer');
+var pauseTimerButton = document.querySelector('.pauseTimer');
+var timerDisplay = document.querySelector('.timer');
+var startTime;
+var updatedTime;
+var difference;
+var tInterval;
+var savedTime;
+var paused = 0;
+var running = 0;
+function startTimer(){
+  if(!running){
+    startTime = new Date().getTime();
+    tInterval = setInterval(getShowTime, 1);
+  // change 1 to 1000 above to run script every second instead of every millisecond. one other change will be needed in the getShowTime() function below for this to work. see comment there.   
+  
+    paused = 0;
+    running = 1;
+  timerDisplay.style.background = "gray";
+    timerDisplay.style.cursor = "auto";
+    timerDisplay.style.color = "#99ddff";
+    startTimerButton.classList.add('lighter');
+    pauseTimerButton.classList.remove('lighter');
+    startTimerButton.style.cursor = "auto";
+    pauseTimerButton.style.cursor = "pointer";
+  }
+}
+function pauseTimer(){
+  if (!difference){
+    // if timer never started, don't allow pause button to do anything
+  } else if (!paused) {
+    clearInterval(tInterval);
+    savedTime = difference;
+    paused = 1;
+    running = 0;
+    timerDisplay.style.background = "gray";
+    timerDisplay.style.color = "#fff";
+    timerDisplay.style.cursor = "pointer";
+    startTimerButton.classList.remove('lighter');
+    pauseTimerButton.classList.add('lighter');
+    startTimerButton.style.cursor = "pointer";
+    pauseTimerButton.style.cursor = "auto";
+  } else {
+  // if the timer was already paused, when they click pause again, start the timer again
+  startTimer();
+  }
+}
+function resetTimer(){
+  clearInterval(tInterval);
+  savedTime = 0;
+  difference = 0;
+  paused = 0;
+  running = 0;
+  timerDisplay.innerHTML = 'START STOPWATCH';
+  timerDisplay.style.background = "gray";
+  timerDisplay.style.color = "#fff";
+  timerDisplay.style.cursor = "pointer";
+  startTimerButton.classList.remove('lighter');
+  pauseTimerButton.classList.remove('lighter');
+  startTimerButton.style.cursor = "pointer";
+  pauseTimerButton.style.cursor = "auto";
+}
+function getShowTime(){
+  updatedTime = new Date().getTime();
+  if (savedTime){
+    difference = (updatedTime - startTime) + savedTime;
+  } else {
+    difference =  updatedTime - startTime;
+  }
+  // var days = Math.floor(difference / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((difference % (1000 * 60)) / 1000);
+  var milliseconds = Math.floor((difference % (1000 * 60)) / 100);
+  hours = (hours < 10) ? "0" + hours : hours;
+  minutes = (minutes < 10) ? "0" + minutes : minutes;
+  seconds = (seconds < 10) ? "0" + seconds : seconds;
+  milliseconds = (milliseconds < 100) ? (milliseconds < 10) ? "00" + milliseconds : "0" + milliseconds : milliseconds;
+  timerDisplay.innerHTML = hours + ':' + minutes + ':' + seconds + ':' + milliseconds;
+}
+  </script>
+  <p style = "text-align: center">© Jamie Utariello</p>
+  <div class="break1"></div>
+  <div id = "tests">
+    <h2><a href = "https://ignition.af267.repl.co/">IGNITION</a></h2>
+    <p>Basic model rocket altitude calculator (no air resistance taken account for)</p>
+  </div>
+  <div class="break1"></div>
+  <div id = "links">
+    <h2>REFERENCE LINKS</h2>
+    <p><a href = "https://create.arduino.cc/projecthub/nmrsthrust/arduino-powered-weather-balloon-datalogger-408816?ref=platform&ref_id=424_trending___&offset=7">Arduino Balloon - @nmrsthrust</a></p>
+    <p><a href = "https://www.youtube.com/watch?v=QQGAcq_9zNg">How to Build a Rocket Engine - @Blasted Science</a></p>
+    <p><a href = "https://create.arduino.cc/projecthub/UniverseRobotics/delta-thrust-vector-control-rocket-guidance-system-a32025?ref=platform&ref_id=424_trending_part__&offset=8">Gimbaling Rocket Engine - @Cole Purtzer</a></p>
+    <p><a href = "https://bps.space/about">General Rocketry Questions - @Joe Barnard</a></p>
+    <p><a href = "https://www.grc.nasa.gov/www/k-12/rocket/termvr.html">Terminal Velocity Calculator - @NASA</a></p>
+    <p><a href = "https://www.rocketreviews.com/index.php">Parachute Size Calculator - @RocketReviews</a></p>
+    <p><a href = "https://www.rocket-simulator.com/simulator.php">Apogee Projector - @Matthew Bohan</a></p>
+  </div>
+  <div class="break1"></div>
+  <footer>
+    <p>
+      <span style="padding-right: 10px;">COPYRIGHT © NEOAD</span>
+      |
+      <a href="https://www.youtube.com/@neoad3883" target="_blank" style="padding-left: 10px; padding-right: 10px;">YOUTUBE</a>
+      |
+      <a href="https://twitter.com/NeoAeroDesign" target="_blank" style="padding-left: 10px;">TWITTER</a>
+    </p>
+  </footer>
+</body>
+</html>
