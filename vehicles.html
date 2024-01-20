@@ -1,0 +1,148 @@
+<html>
+
+<head>
+  <title>Vehicles - NeoAD</title>
+  <link rel="shortcut icon" href="logos/logo-new-small.png">
+  <link rel="stylesheet" href="main.css">
+  <meta property="og:title" content="Vehicles - NeoAD" />
+  <meta property="og:description" content="Taking the skies beyond"/>
+  <meta property="og:image" content="logos/logo-new-white.png">
+  <style>
+    #rlx{
+      background-image: url('vehicles/X-site.png');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: auto 100vh;
+    }
+    #interbreak{
+      background-color: #171717;
+      background-image: url('pic/chute.png');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100vw auto;
+      padding-bottom: 200px;
+    }
+    #rly{
+      background-image: url('vehicles/Y-site.png');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: auto 100vh;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="heading" style="padding-left:20px">
+    <a href="index.html" style="margin-top:-20px"><img src="logos/logo-new-white.png" alt="NeoAD - Home" id="logoimg" align="right" /></a>
+    <h3 style="margin:25px; padding-left:10px; padding-right:7px; font-size:20px;"><a href="launches.html">LAUNCHES</a></h3>
+    <h3 style="margin:25px; padding-right:7px; font-size:20px;" ><a href="vehicles.html">VEHICLES</a></h3>
+    <h3 style="margin:25px; padding-right:7px; font-size:20px;"><a href="resources.html">RESOURCES</a></h3>
+    <h3 style="margin:25px; padding-right:7px; font-size:20px;"><a href="about.html">ABOUT</a></h3>
+  </div>
+  <div id="rlx" style="padding:20px">
+    <div class="break1"></div>
+    <h1 style="margin: 5px">RL-X</h1>
+    <p>MADE FROM 100% RECYCLED MATERIALS</p>
+    <div class="break2"></div>
+    <p style="max-width: 70vw; margin: auto;">The NeoAD RL-X is a reusable model rocket made out of 100% recycled materials including paper towel rolls, cardboard boxes, and plastic trash bags. The vehicle is powered by a single 18mm black powder solid rocket motor. With an Estes C6-5 motor, the rocket has an apogee of around 800 ft.</p>
+    <div class="break1"></div>
+    <h2 style="margin: 10px;">SPECIFICATIONS</h2>
+    <p><b>HEIGHT:</b> 12-13 in.</p>
+    <p><b>DIAMETER:</b> 1.5 in.</p>
+    <p><b>MASS:</b> 2.5 oz.</p>
+    <p><b>ENGINE:</b> 18 mm. A/B/C</p>
+    <p><b>APOGEE:</b> ~800 ft.</p>
+    <div class="break1"></div>
+    <h1 id="launchNo" style="margin: 5px; font-weight: normal; font-size: 120px; line-height: 80%;">5</h1>
+    
+    <script>
+      
+function animateValue(obj, start, end, duration) {
+  let startTimestamp = null;
+  const step = (timestamp) => {
+    if (!startTimestamp) startTimestamp = timestamp;
+    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+    obj.innerHTML = Math.floor(progress * (end - start) + start);
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    }
+  };
+  window.requestAnimationFrame(step);
+}
+
+const obj = document.getElementById("launchNo");
+animateValue(obj, 0, 5, 1000);
+      
+    </script>
+    
+    <p>TOTAL LAUNCHES</p>
+    <div class="break1"></div>
+    <table>
+      <tr>
+        <td>
+          <img class="vehicle" src="vehicles/x1001.jpg"/>
+          <figcaption>RL-X (B1) X1001</figcaption>
+          <figcaption>Status: Retired</figcaption>
+          <figcaption>Flights: 2</figcaption>
+        </td>
+        <td>
+          <img class="vehicle" src="vehicles/x1002.jpg"/>
+          <figcaption>RL-X (B1V2) X1002</figcaption>
+          <figcaption>Status: Active</figcaption>
+          <figcaption>Flights: 2</figcaption>
+        </td>
+        <td>
+          <img class="vehicle" src="vehicles/x1003.jpg"/>
+          <figcaption>RL-X (B1V2) X1003</figcaption>
+          <figcaption>Status: Active</figcaption>
+          <figcaption>Flights: 1</figcaption>
+        </td>
+      </tr>
+    </table>
+    <div class="break1"></div>
+  </div>
+  <div class="break2" id="interbreak"></div>
+  <div id="rly" style="padding:20px">
+    <div class="break1"></div>
+    <h1 style="margin: 5px">RL-Y</h1>
+    <p>3D PRINTED CORE</p>
+    <div class="break2"></div>
+    <p style="max-width: 70vw; margin: auto;">The NeoAD RL-Y is a model rocket with a 3D printed core stage made with a school printer. It has a 2.56 in. diameter payload bay capable of carrying payloads up to 2 oz. With an Estes F15 engine fitted in, the vehicle is capable of reaching altitudes of around 540 ft. The first vehicle, Y1001, is slated to fly NET August 2023.</p>
+    <div class="break1"></div>
+    <h2 style="margin: 10px;">SPECIFICATIONS</h2>
+    <p><b>HEIGHT:</b> 30 in.</p>
+    <p><b>DIAMETER:</b> 2.56 in.</p>
+    <p><b>PAYLOAD:</b> 2 oz.</p>
+    <p><b>ENGINE:</b> 29 mm. D/E/F</p>
+    <p><b>APOGEE:</b> ~540 ft.</p>
+    <div class="break1"></div>
+    <p>FIRST FLIGHT</p>
+    <h1 id="launchNo" style="margin: 5px; font-weight: normal; font-size: 70px; line-height: 90%;">8/26/23</h1>    
+    <div class="break1"></div>
+    <table>
+      <tr>
+        <td>
+          <img class="vehicle" src="vehicles/y1001.jpg"/>
+          <figcaption>RL-Y (B1) Y1001</figcaption>
+          <figcaption>Status: Active</figcaption>
+          <figcaption>Flights: 1</figcaption>
+        </td>
+      </tr>
+    </table>
+    <div class="break1"></div>
+  </div>
+  <footer>
+    <p>
+      <span style="padding-right: 10px;">COPYRIGHT © NEOAD</span>
+      |
+      <a href="https://www.youtube.com/@neoad3883" target="_blank" style="padding-left: 10px; padding-right: 10px;">YOUTUBE</a>
+      |
+      <a href="https://twitter.com/NeoAeroDesign" target="_blank" style="padding-left: 10px;">TWITTER</a>
+    </p>
+  </footer>
+</body>
+
+</html>
